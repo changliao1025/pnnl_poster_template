@@ -37,13 +37,15 @@
 \newlength{\onecolwid}
 \newlength{\twocolwid}
 \newlength{\threecolwid}
-\setlength{\paperwidth}{70in} % A0 width: 46.8in
-\setlength{\paperheight}{47in} % A0 height: 33.1in
+\newlength{\sidewid}
+\setlength{\paperwidth}{60in} % A0 width: 46.8in
+\setlength{\paperheight}{42in} % A0 height: 33.1in
 \setlength{\sepwid}{0.01\paperwidth} % Separation width (white space) between columns
 \setlength{\onecolwid}{0.32\paperwidth} % Width of one column
 \setlength{\twocolwid}{0.46\paperwidth} % Width of two columns
 \setlength{\threecolwid}{0.65\paperwidth} % Width of three columns
 \setlength{\topmargin}{-1.0in} % Reduce the top margin size
+\setlength{\sidewid}{0.1\paperwidth} % side background 
 
 % -----------------------------------------------------------
 \usepackage{graphicx} % Required for including images
@@ -75,17 +77,17 @@
   %\vspace{0.5in}
 }
 %Chang comment: this is where you can modify the background image
-\setbeamertemplate{background}{\includegraphics[width=\paperwidth,keepaspectratio]{figure/header.jpg}}
+\setbeamertemplate{background}{\includegraphics[height=\paperheight, keepaspectratio]{figure/background2019.png}}
 % ----------------------------------------------------------------------------------------
 % TITLE SECTION
 % ----------------------------------------------------------------------------------------
 %Chang comment: this is one of the projects we finished.
-\title{ \huge{Watershed Delineation On A Hexagonal Mesh Grid}}
-\author{ \Large{ \hspace{0.5in} Chang Liao, Teklu Tesfa, Zhuoran Duan, and Ruby Leung } }
+\title{ \huge{  \hspace{4.5in} Watershed Delineation On A Hexagonal Mesh Grid}}
+\author{ \Large{ \hspace{6in} Chang Liao, Teklu Tesfa, Zhuoran Duan, and Ruby Leung } }
 \institute[ETH]{
-  \large{ \hspace{0.5in} Pacific Northwest National Laboratory }}
+  \large{ \hspace{6in} Pacific Northwest National Laboratory }}
 \date{\today}
-% ----------------------------------------------------------------------------------------
+
 
 % ----------------------------------------------------------------------------------------
 \begin{document}
@@ -95,8 +97,9 @@
 \setlength{\belowcaptionskip}{1ex} % White space under figures
 \setlength\belowdisplayshortskip{1ex} % White space under equations
 \begin{frame}[t] % The whole poster is enclosed in one beamer frame
+  \vspace{-3in}
   \begin{columns}[t] % The whole poster consists of three major columns, the second of which is split into two columns twice - the [t] option aligns each column's content to the top
-    \begin{column}{\sepwid}
+    \begin{column}{\sidewid}
     \end{column} % Empty spacer column
     \begin{column}{\sepwid}
     \end{column} % Empty spacer column
@@ -155,10 +158,33 @@
     % \begin{column}{\sepwid}
     % \end{column} % Empty spacer column
     \begin{column}{\threecolwid}
-      \vspace{3in}
+      \vspace{10in}
       % ----------------------------------------------------------------------------------------
       % MATERIALS
       % -----------------------------------------------------------------------------------
+
+      \begin{minipage}[b][0.3\textheight][c]{0.4\textwidth}
+        \begin{figure}[ht]
+          \begin{subfigure}[t]{\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{figure/placeholder.jpg}
+            \caption{Grid A.}
+          \end{subfigure}
+          \begin{subfigure}[t]{\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{figure/placeholder.jpg}
+            \caption{Grid B.}
+          \end{subfigure}
+        \end{figure}
+          \end{minipage}
+        \begin{minipage}[b][0.3\textheight][c]{0.4\textwidth}
+          \begin{figure}
+            \includegraphics[width=\linewidth]{figure/placeholder.jpg}
+            \caption{Calibrated soil anisotropy of hydraulic conductivity.}
+            \label{fig:clm_structure}
+          \end{figure}
+        \end{minipage}
+
       \begin{figure}
         \includegraphics[width = 0.72\textwidth]{figure/placeholder.jpg}
         \caption{Spatial distributions of simulated flow direction and stream networks in Columbia River Basin.}
@@ -166,29 +192,15 @@
       \end{figure}
     \end{column} % End of column 2.1    
   \end{columns} % End of all the columns in the poster
-  \vspace{-1.5in}
-  \begin{columns}[t]
+  \vspace{0in}
+  \begin{columns}[t]   
     \begin{column}{\sepwid}
     \end{column} % Empty spacer column
     \begin{column}{\sepwid}
     \end{column} % Empty spacer column
-    \begin{column}{\onecolwid}
-      % \begin{figure}
-      \includegraphics[width=0.4\textwidth,left]{figure/doe.png}
-      % \end{figure}
-    \end{column}
-    \begin{column}{\sepwid}
-    \end{column} % Empty spacer column
-    \begin{column}{\onecolwid}
-      %\begin{figure}
-        \includegraphics[width=0.6\textwidth,height=2.5in,left]{figure/placeholder.jpg}
-      %\end{figure}
-    \end{column}
-    \begin{column}{\sepwid}
-    \end{column} % Empty spacer column
-    \begin{column}{\onecolwid}
-      \includegraphics[width=0.5\textwidth,right]{figure/pnnl_web.png}
-    \end{column}
+    \begin{column}{0.9\paperwidth}      
+      \includegraphics[width=\textwidth,center]{figure/bottom_logo.png}     
+    \end{column}   
     \begin{column}{\sepwid}
     \end{column} % Empty spacer column
   \end{columns}
